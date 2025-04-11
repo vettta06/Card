@@ -1,8 +1,10 @@
 package com.example.card
 
+import android.animation.ValueAnimator
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
 import com.example.card.database.AppDatabase
 import com.example.card.database.Card
@@ -140,6 +142,25 @@ class MainActivity : AppCompatActivity() {
         showingQuestion = !showingQuestion
         updateCardDisplay()
         if (!showingQuestion) showRatingDialog()
+        val startColor = if (showingQuestion) {
+            ContextCompat.getColor(this, R.color.card_question)
+        } else {
+            ContextCompat.getColor(this, R.color.card_answer)
+        }
+
+        val endColor = if (showingQuestion) {
+            ContextCompat.getColor(this, R.color.card_answer)
+        } else {
+            ContextCompat.getColor(this, R.color.card_question)
+        }
+
+        ValueAnimator.ofArgb(startColor, endColor).apply {
+            duration = 300
+            addUpdateListener {
+                binding.cardView.setCardBackgroundColor(it.animatedValue as Int)
+            }
+            start()
+        }
     }
 
     private fun showRatingDialog() {
@@ -161,15 +182,28 @@ class MainActivity : AppCompatActivity() {
             if (cards.isEmpty()) {
                 tvCardContent.text = getString(R.string.no_cards)
                 tvCardStatus.text = ""
+                // Устанавливаем цвет по умолчанию для пустого состояния
+                cardView.setCardBackgroundColor(ContextCompat.getColor(this@MainActivity, R.color.card_question))
             } else {
                 val card = cards[currentPosition]
+
+                // Устанавливаем текст
                 tvCardContent.text = if (showingQuestion) card.question else card.answer
                 tvCardStatus.text = getString(R.string.card_status, card.interval, card.repetition)
+
+                // Меняем цвет карточки
+                val bgColorRes = if (showingQuestion) {
+                    R.color.card_question // Цвет вопроса
+                } else {
+                    R.color.card_answer   // Цвет ответа
+                }
+                cardView.setCardBackgroundColor(ContextCompat.getColor(this@MainActivity, bgColorRes))
             }
+
+            // Обновляем счетчик карточек
+            tvCardCount.text = getString(R.string.card_count, cards.size, currentPosition + 1)
         }
     }
-
-
     private fun updateCardSM2(card: Card, quality: Int) {
         require(quality in 0..5) { "Quality must be between 0 and 5" }
 
