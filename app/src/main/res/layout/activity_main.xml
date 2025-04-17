@@ -17,8 +17,7 @@
         android:textSize="18sp"
         android:textColor="@color/text_primary"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Карточки: 10 (Текущая: 3)"/>
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <!-- Карточка с вопросом/ответом -->
     <androidx.cardview.widget.CardView
@@ -52,8 +51,7 @@
         android:textColor="@color/text_secondary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cardView"
-        tools:text="Интервал: 5 дн. Повторений: 3"/>
+        app:layout_constraintTop_toBottomOf="@id/cardView" />
 
     <!-- Панель навигации -->
     <LinearLayout
@@ -66,71 +64,94 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvCardStatus">
 
-        <Button
-            android:id="@+id/btnBack"
-            android:layout_width="100dp"
-            android:layout_height="48dp"
-            android:text="@string/button_back"
-            android:backgroundTint="@color/button_nav"
-            android:textColor="@color/text_on_button"/>
-
         <Space
             android:layout_width="32dp"
             android:layout_height="1dp"/>
 
-        <Button
-            android:id="@+id/btnNext"
-            android:layout_width="100dp"
-            android:layout_height="48dp"
-            android:text="@string/button_next"
-            android:backgroundTint="@color/button_nav"
-            android:textColor="@color/text_on_button"/>
     </LinearLayout>
 
     <!-- Панель управления -->
+
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:orientation="horizontal"
         android:gravity="center"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/navigationPanel">
+        app:layout_constraintTop_toBottomOf="@id/navigationPanel"
+        app:layout_constraintVertical_bias="0.418"
+        tools:layout_editor_absoluteX="16dp">
 
         <Button
             android:id="@+id/btnAdd"
             android:layout_width="100dp"
             android:layout_height="48dp"
             android:layout_marginEnd="8dp"
-            android:text="@string/button_add"
             android:backgroundTint="@color/button_add"
-            android:textColor="@color/text_on_button"/>
+            android:text="@string/button_add"
+            android:textColor="@color/text_on_button" />
 
         <Button
             android:id="@+id/btnEdit"
             android:layout_width="100dp"
             android:layout_height="48dp"
             android:layout_marginHorizontal="8dp"
-            android:text="@string/button_edit"
             android:backgroundTint="@color/button_edit"
-            android:textColor="@color/text_on_button"/>
+            android:text="@string/button_edit"
+            android:textColor="@color/text_on_button" />
 
         <Button
             android:id="@+id/btnDelete"
             android:layout_width="100dp"
             android:layout_height="48dp"
             android:layout_marginStart="8dp"
-            android:text="@string/button_delete"
             android:backgroundTint="@color/button_delete"
-            android:textColor="@color/text_on_button"/>
-        <Button
-            android:id="@+id/btnStats"
-            android:layout_width="100dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="8dp"
-            android:text="@string/button_stats"
-            android:backgroundTint="@color/button_stats"
-            android:textColor="@color/text_on_button"/>
+            android:text="@string/button_delete"
+            android:textColor="@color/text_on_button" />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btnStats"
+        android:layout_width="275dp"
+        android:layout_height="51dp"
+        android:layout_marginBottom="32dp"
+        android:backgroundTint="@color/button_stats"
+        android:text="@string/button_stats"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/text_on_button"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/btnNext"
+        android:layout_width="100dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="36dp"
+        android:backgroundTint="@color/button_nav"
+        android:text="@string/button_next"
+        android:textColor="@color/text_on_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/btnBack"
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="100dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="36dp"
+        android:backgroundTint="@color/button_nav"
+        android:text="@string/button_back"
+        android:textColor="@color/text_on_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

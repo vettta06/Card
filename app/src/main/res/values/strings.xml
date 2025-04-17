@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">Card</string>
+    <string name="card_count">Карточек: %1$d/%2$d</string>
+    <string name="default_card_text">Текст карточки</string>
+    <string name="card_count_format">%1$d/%2$d</string>
+    <!-- Кнопки -->
+    <string name="button_back">Назад</string>
+    <string name="button_next">Вперёд</string>
+    <string name="button_add">+</string>
+    <string name="button_edit">✎</string>
+    <string name="button_delete">-</string>
+    <string name="button_stats">Статистика</string>
+    <string name="back">Назад</string>
+
+
+    <!-- Диалоги и сообщения -->
+    <string name="card_status">Интервал: %1$d дн. | Повторений: %2$d</string>
+    <string name="no_cards">Нет карточек</string>
+    <string name="error_loading">Ошибка загрузки</string>
+    <string name="rate_dialog_title">Оцените запоминание</string>
+    <string name="new_card">Новая карточка</string>
+    <string name="edit_card">Редактировать карточку</string>
+    <string name="delete_confirmation_title">Удаление карточки</string>
+    <string name="delete_confirmation_message">Вы уверены, что хотите удалить эту карточку?</string>
+    <string name="delete_confirm">Удалить</string>
+    <string name="delete_cancel">Отмена</string>
+
+    <!-- Добавленные строки -->
+    <string name="add">Добавить</string>
+    <string name="cancel">Отмена</string>
+    <string name="save">Сохранить</string>
+
+    <!-- Массив оценок -->
+    <string-array name="ratings">
+        <item>0 - Не помню</item>
+        <item>1 - С трудом</item>
+        <item>2 - Средне</item>
+        <item>3 - Хорошо</item>
+        <item>4 - Легко</item>
+        <item>5 - Идеально</item>
+    </string-array>
+</resources>

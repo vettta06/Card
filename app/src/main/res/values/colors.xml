@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Цвета карточек -->
+    <color name="card_question">#EFD6F6</color>  <!-- Сиреневый для вопроса -->
+    <color name="card_answer">#C6F6C6</color>    <!-- Мятный для ответа -->
+
+    <!-- Цвета кнопок -->
+    <color name="button_add">#44BD48</color>     <!-- Зеленый -->
+    <color name="button_edit">#004E8A</color>    <!-- Синий -->
+    <color name="button_delete">#FFF44336</color>  <!-- Красный -->
+    <color name="button_nav">#0480E0</color>     <!-- Синий для кнопок Назад/Вперед -->
+    <color name="button_stats">#0480E0</color>
+    <color name="button_back">#0480E0</color>
+
+    <!-- Текстовые цвета -->
+    <color name="text_primary">#FF1C1B1F</color>   <!-- Основной текст -->
+    <color name="text_secondary">#FF49454F</color> <!-- Вторичный текст -->
+    <color name="text_on_button">#FFFFFF</color>   <!-- Белый текст на кнопках -->
+
+    <!-- Фон и системные цвета -->
+    <color name="background">#FFFFFFFF</color>     <!-- Белый фон -->
+    <color name="error_color">#FFB00020</color>    <!-- Цвет ошибок -->
+
+    <!-- Дополнительные цвета (по желанию) -->
+    <color name="card_shadow">#33000000</color>    <!-- Тень карточки -->
+    <color name="gray">#BDBDBD</color>
+    <color name="blue">#2196F3</color>
+</resources>
